@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "www": "deno run -A --unstable --watch=www/static/,www/routes/ www/dev.ts"
+  },
+  "importMap": "./.vscode/import_map.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
+  }
+}
