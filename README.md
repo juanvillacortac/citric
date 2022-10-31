@@ -2,8 +2,8 @@
 
 <img align="right" src="./www/static/logo.svg" height="150px" alt="the fresh logo: a sliced lemon dripping with juice">
 
-**Lemonade**, the "blazing fast" opinionated Fresh fork that you don't need,
-unless you want:
+**Lemonade™**, the "blazing fast" 🐌 and "bleeding edge" 🤡 Fresh fork that you
+don't need, unless you want:
 
 - Islands on any directory, only suffix the component with
   `.island.{tsx|ts|jsx|js}`.
@@ -12,7 +12,7 @@ unless you want:
 - More premade plugins, like SPA client navigation.
 - And more unnecesary and forced stuff on this refreshing frankenstein.
 
-## Why?
+## ❓ Why?
 
 The real question is: _why not?_
 
