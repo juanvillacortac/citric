@@ -2,8 +2,8 @@
 
 <img align="right" src="./www/static/logo.svg" height="150px" alt="the fresh logo: a sliced citric dripping with juice">
 
-**Citric™**, the "blazing fast" 🐌 and "bleeding edge" 🤡 Fresh fork that you
-don't need, unless you want:
+**Citric™**, the "blazing fast" 🐌 and "bleeding edge" 🤡 Fresh ~~ROM hack~~ fork
+that you don't need, unless you are an edgy 16yo developer or you simply want:
 
 - Islands on any directory, only suffix the component with
   `.island.{tsx|ts|jsx|js}`.
