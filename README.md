@@ -36,7 +36,7 @@ You can scaffold a new project by running the Fresh init script. To scaffold a
 project in the `deno-citric-demo` folder, run the following:
 
 ```sh
-deno run -A -r https://fresh-citric.deno.dev deno-citric-demo
+deno run -A -r https://citric.deno.dev deno-citric-demo
 ```
 
 Then navigate to the newly created project folder:
