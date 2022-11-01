@@ -36,7 +36,7 @@ You can scaffold a new project by running the Fresh init script. To scaffold a
 project in the `deno-lemonade-demo` folder, run the following:
 
 ```sh
-deno run -A -r https://lemonade.deno.dev deno-lemonade-demo
+deno run -A -r https://fresh-lemonade.deno.dev deno-lemonade-demo
 ```
 
 Then navigate to the newly created project folder:
