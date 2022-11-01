@@ -1,7 +1,7 @@
 import { JSX, options as preactOptions, VNode } from "preact";
 import { Configuration, setup as twSetup, Sheet, tw } from "twind";
 
-export const STYLE_ELEMENT_ID = "__LEMON_TWIND";
+export const STYLE_ELEMENT_ID = "__CITRIC_TWIND";
 
 export interface Options extends Omit<Configuration, "mode" | "sheet"> {
   /** The import.meta.url of the module defining these options. */

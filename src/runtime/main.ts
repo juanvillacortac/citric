@@ -26,7 +26,7 @@ export function revive(islands: Record<string, ComponentType>, props: any[]) {
   function walk(node: Node | null) {
     const tag =
       node!.nodeType === 8 &&
-      ((node as Comment).data.match(/^\s*lemon-(.*)\s*$/) || [])[1];
+      ((node as Comment).data.match(/^\s*citric-(.*)\s*$/) || [])[1];
     let endNode: Node | null = null;
     if (tag) {
       const startNode = node!;

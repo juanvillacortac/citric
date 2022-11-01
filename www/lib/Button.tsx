@@ -1,5 +1,5 @@
 import { JSX } from "preact";
-import { IS_BROWSER } from "$lemonade/runtime.ts";
+import { IS_BROWSER } from "$citric/runtime.ts";
 
 export function Button(props: JSX.HTMLAttributes<HTMLButtonElement>) {
   return (

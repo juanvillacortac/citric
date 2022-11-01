@@ -1,4 +1,4 @@
-import { Plugin } from "$lemonade/server.ts";
+import { Plugin } from "$citric/server.ts";
 import { FlamethrowerOptions } from "https://esm.sh/v96/flamethrower-router@0.0.0-meme.12/dist/interfaces.d.ts";
 
 export default function flamethrower(options?: FlamethrowerOptions): Plugin {

@@ -1,23 +1,23 @@
 import { join, parse, resolve } from "./src/dev/deps.ts";
 import { error } from "./src/dev/error.ts";
 import { collect, ensureMinDenoVersion, generate } from "./src/dev/mod.ts";
-import { lemonadeImports, twindImports } from "./src/dev/imports.ts";
+import { citricImports, twindImports } from "./src/dev/imports.ts";
 
 ensureMinDenoVersion();
 
-const help = `lemonade-init
+const help = `citric-init
 
-Initialize a new Lemonade project. This will create all the necessary files for a
+Initialize a new Citric project. This will create all the necessary files for a
 new project.
 
 To generate a project in the './foobar' subdirectory:
-  lemonade-init ./foobar
+  citric-init ./foobar
 
 To generate a project in the current directory:
-  lemonade-init .
+  citric-init .
 
 USAGE:
-    lemonade-init <DIRECTORY>
+    citric-init <DIRECTORY>
 
 OPTIONS:
     --force   Overwrite existing files
@@ -30,10 +30,10 @@ const CONFIRM_EMPTY_MESSAGE =
   "The target directory is not empty (files could get overwritten). Do you want to continue anyway?";
 
 const USE_TWIND_MESSAGE =
-  "Lemonade has built in support for styling using Tailwind CSS. Do you want to use this?";
+  "Citric has built in support for styling using Tailwind CSS. Do you want to use this?";
 
 const USE_SPA_MESSAGE =
-  "Lemonade has built in support for SPA-like routing using the meme Flamethrower router for static web apps. Do you want to use this?";
+  "Citric has built in support for SPA-like routing using the meme Flamethrower router for static web apps. Do you want to use this?";
 
 const USE_VSCODE_MESSAGE = "Do you use VS Code?";
 
@@ -47,7 +47,7 @@ if (flags._.length !== 1) {
 }
 
 console.log(
-  `\n%c  🍋 Lemonade: the next-gen web framework.  %c\n`,
+  `\n%c  🍋 Citric: the next-gen web framework.  %c\n`,
   "background-color: #86efac; color: black; font-weight: bold",
   ""
 );
@@ -70,7 +70,7 @@ try {
     throw err;
   }
 }
-console.log("%cLet's set up your new Lemonade project.\n", "font-weight: bold");
+console.log("%cLet's set up your new Citric project.\n", "font-weight: bold");
 
 const useTwind =
   flags.twind === null ? confirm(USE_TWIND_MESSAGE) : flags.twind;
@@ -95,7 +95,7 @@ if (useVSCode) {
 }
 
 const importMap = { imports: {} as Record<string, string> };
-lemonadeImports(importMap.imports);
+citricImports(importMap.imports);
 if (useTwind) twindImports(importMap.imports);
 importMap.imports["$lib/"] = "./lib/";
 const IMPORT_MAP_JSON = JSON.stringify(importMap, null, 2) + "\n";
@@ -104,14 +104,14 @@ await Deno.writeTextFile(
   IMPORT_MAP_JSON
 );
 
-const ROUTES_APP_TSX = `import { LayoutProps } from "$lemonade/server.ts";
-import { Head } from "$lemonade/runtime.ts";
+const ROUTES_APP_TSX = `import { LayoutProps } from "$citric/server.ts";
+import { Head } from "$citric/runtime.ts";
 
 export default function Layout({ Component }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Lemonade App</title>
+        <title>Citric App</title>
       </Head>
       <div class="flex flex-col">
         <div class="flex bg-green-200 shadow-lg text-sm w-full p-2 justify-between items-center">
@@ -119,7 +119,7 @@ export default function Layout({ Component }: LayoutProps) {
             <img
               src="/logo.svg"
               class="h-18 transform w-18 duration-200 hover:scale-110 hover:rotate-12"
-              alt="the lemonade logo: a sliced lemon dripping with juice"
+              alt="the citric logo: a sliced citric dripping with juice"
             />
           </a>
           <div className="flex space-x-4">
@@ -152,10 +152,10 @@ export default function Home() {
         ${
           useTwind ? `class="w-32 h-32"` : `width="128"\n          height="128"`
         }
-        alt="the lemonade logo: a sliced lemon dripping with juice"
+        alt="the citric logo: a sliced citric dripping with juice"
       />
       <p${useTwind ? ` class="my-6"` : ""}>
-        Welcome to \`lemonade\`. Try updating this message in the ./routes/+page.tsx
+        Welcome to \`citric\`. Try updating this message in the ./routes/+page.tsx
         file, and refresh.
       </p>
       <Counter start={3} />
@@ -169,7 +169,7 @@ await Deno.writeTextFile(
 );
 
 const COMPONENTS_BUTTON_TSX = `import { JSX } from "preact";
-import { IS_BROWSER } from "$lemonade/runtime.ts";
+import { IS_BROWSER } from "$citric/runtime.ts";
 
 export function Button(props: JSX.HTMLAttributes<HTMLButtonElement>) {
   return (
@@ -208,7 +208,7 @@ await Deno.writeTextFile(
   ISLANDS_COUNTER_TSX
 );
 
-const ROUTES_GREET_TSX = `import { PageProps } from "$lemonade/server.ts";
+const ROUTES_GREET_TSX = `import { PageProps } from "$citric/server.ts";
 
 export default function Greet(props: PageProps) {
   return <div>Hello {props.params.name}</div>;
@@ -219,7 +219,7 @@ await Deno.writeTextFile(
   ROUTES_GREET_TSX
 );
 
-const ROUTES_API_JOKE_TS = `import { HandlerContext } from "$lemonade/server.ts";
+const ROUTES_API_JOKE_TS = `import { HandlerContext } from "$citric/server.ts";
 
 // Jokes courtesy of https://punsandoneliners.com/randomness/programmer-jokes/
 const JOKES = [
@@ -246,7 +246,7 @@ await Deno.writeTextFile(
   ROUTES_API_JOKE_TS
 );
 
-const TWIND_CONFIG_TS = `import { Options } from "$lemonade/plugins/twind.ts";
+const TWIND_CONFIG_TS = `import { Options } from "$citric/plugins/twind.ts";
 
 export default {
   selfURL: import.meta.url,
@@ -273,7 +273,7 @@ await Deno.writeTextFile(
 
 try {
   const faviconArrayBuffer = await fetch(
-    "https://lemonade.deno.dev/favicon.ico"
+    "https://citric.deno.dev/favicon.ico"
   ).then((d) => d.arrayBuffer());
   await Deno.writeFile(
     join(resolvedDirectory, "static", "favicon.ico"),
@@ -289,20 +289,20 @@ let MAIN_TS = `/// <reference no-default-lib="true" />
 /// <reference lib="dom.asynciterable" />
 /// <reference lib="deno.ns" />
 
-import { start } from "$lemonade/server.ts";
-import manifest from "./lemonade.gen.ts";
+import { start } from "$citric/server.ts";
+import manifest from "./citric.gen.ts";
 `;
 
 if (useTwind) {
   MAIN_TS += `
-import twindPlugin from "$lemonade/plugins/twind.ts";
+import twindPlugin from "$citric/plugins/twind.ts";
 import twindConfig from "./twind.config.ts";
 `;
 }
 
 if (useSPA) {
   MAIN_TS += `
-import flamethrowerPlugin from "$lemonade/plugins/flamethrower.ts";
+import flamethrowerPlugin from "$citric/plugins/flamethrower.ts";
 `;
 }
 
@@ -318,7 +318,7 @@ await Deno.writeTextFile(MAIN_TS_PATH, MAIN_TS);
 
 const DEV_TS = `#!/usr/bin/env -S deno run -A --watch=static/,routes/
 
-import dev from "$lemonade/dev.ts";
+import dev from "$citric/dev.ts";
 
 await dev(import.meta.url, "./main.ts");
 `;
@@ -344,7 +344,7 @@ const DENO_CONFIG = JSON.stringify(config, null, 2) + "\n";
 
 await Deno.writeTextFile(join(resolvedDirectory, "deno.json"), DENO_CONFIG);
 
-const README_MD = `# lemonade project
+const README_MD = `# citric project
 
 ### Usage
 

@@ -1,12 +1,12 @@
 import Counter from "$lib/Counter.island.tsx";
-import { Handlers } from "$lemonade/server.ts";
+import { Handlers } from "$citric/server.ts";
 import VERSIONS from "../../versions.json" assert { type: "json" };
 
 export const handler: Handlers = {
   GET(req, ctx) {
     const agent = req.headers.get("user-agent");
     if (agent && agent.includes("Deno")) {
-      const path = `https://deno.land/x/lemonade@${VERSIONS[0]}/init.ts`;
+      const path = `https://deno.land/x/citric@${VERSIONS[0]}/init.ts`;
       return new Response(`Redirecting to ${path}`, {
         headers: { "Location": path },
         status: 307,
@@ -22,11 +22,11 @@ export default function Home() {
       <img
         src="/logo.svg"
         class="h-32 w-32"
-        alt="the lemonade logo: a sliced lemon dripping with juice"
+        alt="the citric logo: a sliced citric dripping with juice"
       />
       <p class="my-6">
-        Welcome to `lemonade`. Try updating this message in the
-        ./routes/+page.tsx file, and refresh.
+        Welcome to `citric`. Try updating this message in the ./routes/+page.tsx
+        file, and refresh.
       </p>
       <Counter start={3} />
     </>

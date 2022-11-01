@@ -79,7 +79,7 @@ export class Bundler {
       : { minify: true };
     const bundle = await esbuild.build({
       bundle: true,
-      define: { __LEMON_BUILD_ID: `"${BUILD_ID}"` },
+      define: { __CITRIC_BUILD_ID: `"${BUILD_ID}"` },
       entryPoints,
       format: "esm",
       metafile: true,

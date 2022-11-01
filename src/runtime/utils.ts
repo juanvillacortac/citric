@@ -1,7 +1,7 @@
 import { VNode } from "preact";
 
-export const INTERNAL_PREFIX = "/_lemon";
-export const ASSET_CACHE_BUST_KEY = "__lemon_c";
+export const INTERNAL_PREFIX = "/_citric";
+export const ASSET_CACHE_BUST_KEY = "__citric_c";
 
 export const IS_BROWSER = typeof document !== "undefined";
 
@@ -21,7 +21,7 @@ export function asset(path: string) {
     ) {
       return path;
     }
-    url.searchParams.set(ASSET_CACHE_BUST_KEY, __LEMON_BUILD_ID);
+    url.searchParams.set(ASSET_CACHE_BUST_KEY, __CITRIC_BUILD_ID);
     return url.pathname + url.search + url.hash;
   } catch (err) {
     console.warn(
@@ -55,12 +55,12 @@ export function assetHashingHook(
   vnode: VNode<{
     src?: string;
     srcset?: string;
-    ["data-lemonade-disable-lock"]?: boolean;
+    ["data-citric-disable-lock"]?: boolean;
   }>
 ) {
   if (vnode.type === "img" || vnode.type === "source") {
     const { props } = vnode;
-    if (props["data-lemonade-disable-lock"]) return;
+    if (props["data-citric-disable-lock"]) return;
     if (typeof props.src === "string") {
       props.src = asset(props.src);
     }

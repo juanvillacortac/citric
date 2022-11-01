@@ -4,8 +4,8 @@ export const RECOMMENDED_PREACT_SIGNALS_VERSION = "1.1.1";
 export const RECOMMENDED_PREACT_SIGNALS_CORE_VERSION = "1.2.1";
 export const RECOMMENDED_TWIND_VERSION = "0.16.17";
 
-export function lemonadeImports(imports: Record<string, string>) {
-  imports["$lemonade/"] = new URL("../../", import.meta.url).href;
+export function citricImports(imports: Record<string, string>) {
+  imports["$citric/"] = new URL("../../", import.meta.url).href;
   imports["preact"] = `https://esm.sh/preact@${RECOMMENDED_PREACT_VERSION}`;
   imports["preact/"] = `https://esm.sh/preact@${RECOMMENDED_PREACT_VERSION}/`;
   imports[

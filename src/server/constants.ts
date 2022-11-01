@@ -11,7 +11,7 @@ export function bundleAssetUrl(path: string) {
   return `${INTERNAL_PREFIX}${JS_PREFIX}/${BUILD_ID}${path}`;
 }
 
-globalThis.__LEMON_BUILD_ID = BUILD_ID;
+globalThis.__CITRIC_BUILD_ID = BUILD_ID;
 
 declare global {
   interface Crypto {
@@ -19,5 +19,5 @@ declare global {
   }
 
   // deno-lint-ignore no-var
-  var __LEMON_BUILD_ID: string;
+  var __CITRIC_BUILD_ID: string;
 }

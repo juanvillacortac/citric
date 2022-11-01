@@ -1,8 +1,8 @@
-# Lemonade
+# Citric
 
-<img align="right" src="./www/static/logo.svg" height="150px" alt="the fresh logo: a sliced lemon dripping with juice">
+<img align="right" src="./www/static/logo.svg" height="150px" alt="the fresh logo: a sliced citric dripping with juice">
 
-**Lemonade™**, the "blazing fast" 🐌 and "bleeding edge" 🤡 Fresh fork that you
+**Citric™**, the "blazing fast" 🐌 and "bleeding edge" 🤡 Fresh fork that you
 don't need, unless you want:
 
 - Islands on any directory, only suffix the component with
@@ -33,16 +33,16 @@ with some differences:
 Install [Deno CLI](https://deno.land/) version 1.25.0 or higher.
 
 You can scaffold a new project by running the Fresh init script. To scaffold a
-project in the `deno-lemonade-demo` folder, run the following:
+project in the `deno-citric-demo` folder, run the following:
 
 ```sh
-deno run -A -r https://fresh-lemonade.deno.dev deno-lemonade-demo
+deno run -A -r https://fresh-citric.deno.dev deno-citric-demo
 ```
 
 Then navigate to the newly created project folder:
 
 ```
-cd deno-lemonade-demo
+cd deno-citric-demo
 ```
 
 From within your project folder, start the development server using the

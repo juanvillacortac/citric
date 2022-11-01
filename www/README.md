@@ -1,4 +1,4 @@
-# lemonade project
+# citric project
 
 ### Usage
 

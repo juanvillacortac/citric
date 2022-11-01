@@ -92,7 +92,7 @@ export class ServerContext {
     this.#notFound = notFound;
     this.#error = error;
     this.#plugins = plugins;
-    this.#dev = !!Deno.env.get("LEMON_DEV");
+    this.#dev = !!Deno.env.get("CITRIC_DEV");
     this.#bundler = new Bundler(
       this.#islands,
       this.#plugins,
@@ -321,7 +321,7 @@ export class ServerContext {
 
   /**
    * This functions returns a request handler that handles all routes required
-   * by lemonade, including static files.
+   * by citric, including static files.
    */
   handler(): RequestHandler {
     const inner = rutt.router<RouterState>(...this.#handlers());
@@ -418,7 +418,7 @@ export class ServerContext {
   // }
 
   /**
-   * This function returns all routes required by lemonade as an extended
+   * This function returns all routes required by citric as an extended
    * path-to-regex, to handler mapping.
    */
   #handlers(): [
@@ -502,7 +502,7 @@ export class ServerContext {
             route.component.constructor.name === "AsyncFunction"
           ) {
             throw new Error(
-              "Async components are not supported. Fetch data inside of a route handler, as described in the docs: https://lemonade.deno.dev/docs/getting-started/fetching-data"
+              "Async components are not supported. Fetch data inside of a route handler, as described in the docs: https://citric.deno.dev/docs/getting-started/fetching-data"
             );
           }
 
@@ -640,7 +640,7 @@ export class ServerContext {
   }
 
   /**
-   * Returns a router that contains all lemonade routes. Should be mounted at
+   * Returns a router that contains all citric routes. Should be mounted at
    * constants.INTERNAL_PREFIX
    */
   #bundleAssetRoute = (): rutt.MatchHandler => {

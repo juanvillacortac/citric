@@ -1,11 +1,11 @@
-import { LayoutProps } from "$lemonade/server.ts";
-import { Head } from "$lemonade/runtime.ts";
+import { LayoutProps } from "$citric/server.ts";
+import { Head } from "$citric/runtime.ts";
 
 export default function Layout({ Component }: LayoutProps) {
   return (
     <>
       <Head>
-        <title>Lemonade App</title>
+        <title>Citric App</title>
       </Head>
       <div class="flex flex-col">
         <div class="flex bg-green-200 shadow-lg text-sm w-full p-2 justify-between items-center">
@@ -13,7 +13,7 @@ export default function Layout({ Component }: LayoutProps) {
             <img
               src="/logo.svg"
               class="h-18 transform w-18 duration-200 hover:scale-110 hover:rotate-12"
-              alt="the lemonade logo: a sliced lemon dripping with juice"
+              alt="the citric logo: a sliced citric dripping with juice"
             />
           </a>
           <div className="flex space-x-4">

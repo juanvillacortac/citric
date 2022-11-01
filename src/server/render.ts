@@ -237,7 +237,7 @@ export async function render<Data, State>(
   const state: [islands: unknown[], plugins: unknown[]] = [ISLAND_PROPS, []];
   const styleTags: PluginRenderStyleTag[] = [];
 
-  let script = `const STATE_COMPONENT = document.getElementById("__LEMON_STATE");const STATE = JSON.parse(STATE_COMPONENT?.textContent ?? "[[],[]]");`;
+  let script = `const STATE_COMPONENT = document.getElementById("__CITRIC_STATE");const STATE = JSON.parse(STATE_COMPONENT?.textContent ?? "[[],[]]");`;
 
   for (const [plugin, res] of renderResults) {
     for (const hydrate of res.scripts ?? []) {
@@ -297,7 +297,7 @@ export async function render<Data, State>(
 
   if (state[0].length > 0 || state[1].length > 0) {
     // Append state to the body
-    bodyHtml += `<script id="__LEMON_STATE" type="application/json">${htmlEscapeJsonString(
+    bodyHtml += `<script id="__CITRIC_STATE" type="application/json">${htmlEscapeJsonString(
       JSON.stringify(state)
     )}</script>`;
 
@@ -314,7 +314,7 @@ export async function render<Data, State>(
 
   if (ctx.styles.length > 0) {
     const node = h("style", {
-      id: "__LEMON_STYLE",
+      id: "__CITRIC_STYLE",
       dangerouslySetInnerHTML: { __html: ctx.styles.join("\n") },
     });
     headComponents.splice(0, 0, node);
@@ -396,7 +396,7 @@ options.vnode = (vnode) => {
         const child = h(originalType, props);
         ISLAND_PROPS.push(props);
         return h(
-          `!--lemon-${island.id}:${ISLAND_PROPS.length - 1}--`,
+          `!--citric-${island.id}:${ISLAND_PROPS.length - 1}--`,
           null,
           child
         );

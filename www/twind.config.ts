@@ -1,4 +1,4 @@
-import { Options } from "$lemonade/plugins/twind.ts";
+import { Options } from "$citric/plugins/twind.ts";
 
 export default {
   selfURL: import.meta.url,
